@@ -16,7 +16,7 @@ var async = require("async");
 var options = cli.parse({
 
     token: [ 's', 'The security token', 'string', "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdWtpdGhhIiwianRpIjoiYWEzOGRmZWYtNDFhOC00MWUyLTgwMzktOTJjZTY0YjM4ZDFmIiwic3ViIjoiNTZhOWU3NTlmYjA3MTkwN2EwMDAwMDAxMjVkOWU4MGI1YzdjNGY5ODQ2NmY5MjExNzk2ZWJmNDMiLCJleHAiOjE5MDIzODExMTgsInRlbmFudCI6LTEsImNvbXBhbnkiOi0xLCJzY29wZSI6W3sicmVzb3VyY2UiOiJhbGwiLCJhY3Rpb25zIjoiYWxsIn1dLCJpYXQiOjE0NzAzODExMTh9.Gmlu00Uj66Fzts-w6qEwNUz46XYGzE8wHUhAJOFtiRo" ],
-    duration: [ 'd', 'time', 'int', 120],
+    duration: [ 'd', 'time', 'int', 30],
     company: [ 'c', 'company id', 'int', 103],
     tenant: [ 't', 'tenant id', 'int', 1],
     status: [ 'a', 'status', 'string', "closed"]
@@ -164,8 +164,10 @@ mongoose.connection.once('open', function () {
 
                                 async.eachSeries(arr, function(it, cb){
 
+                                    page++;
+
                                     Ticket.find(query).skip(page*100).limit(100).exec(function (err, tickets) {
-                                        page++;
+
                                         if (err) {
 
                                             logger.error(err);
@@ -216,7 +218,7 @@ mongoose.connection.once('open', function () {
 
                                                     },
                                                     function (err){
-                                                        console.log("Process ia completed");
+                                                        console.log("Process is completed");
                                                         cb();
                                                     });
 
@@ -235,19 +237,14 @@ mongoose.connection.once('open', function () {
 
                                     console.log("Iteration ia completed");
 
-                                })
-
-
+                                });
                                 console.info("Total ticket count is " + count)
 
                             }else{
 
                                 console.info("Total ticket count is 0");
                             }
-
                         }
-
-
                     });
 
 
