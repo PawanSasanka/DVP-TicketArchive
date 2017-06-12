@@ -1,0 +1,30 @@
+{
+  "name": "dvp-ticketarchive",
+  "version": "1.0.0",
+  "description": "file archive tool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DuoSoftware/DVP-TicketArchive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DuoSoftware/DVP-TicketArchive/issues"
+  },
+  "homepage": "https://github.com/DuoSoftware/DVP-TicketArchive#readme",
+  "dependencies": {
+    "async": "^2.4.1",
+    "cli": "^1.0.1",
+    "config": "^1.26.1",
+    "dvp-common": "^0.7.0",
+    "dvp-mongomodels": "^4.8.12",
+    "jsonwebtoken": "^7.4.1",
+    "moment": "^2.18.1",
+    "mongoose": "^4.10.4",
+    "redis": "^2.7.1"
+  }
+}
