@@ -164,7 +164,7 @@ mongoose.connection.once('open', function () {
 
                                 async.eachSeries(arr, function(it, cb){
 
-                                    page++;
+                                    //page++;
 
                                     Ticket.find(query).skip(page*100).limit(100).exec(function (err, tickets) {
 
