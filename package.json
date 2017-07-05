@@ -20,7 +20,7 @@
     "async": "^2.4.1",
     "cli": "^1.0.1",
     "config": "^1.26.1",
-    "dvp-common": "^0.7.0",
+    "dvp-common": "^0.8.4",
     "dvp-mongomodels": "^4.8.12",
     "jsonwebtoken": "^7.4.1",
     "moment": "^2.18.1",
